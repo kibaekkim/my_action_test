@@ -4,11 +4,16 @@ on: [push]
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+
     steps:
-      - name: gfortran on macos
+      - name: gfortran
         run: |
           # make sure gfortran is available
           ls /usr/local/bin/gfortran*
           ls /usr/local/Cellar/gcc*
-          gfortran-11 --version
