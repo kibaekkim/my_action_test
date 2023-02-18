@@ -23,6 +23,8 @@ jobs:
             which gfortran
             which gfortran-12
           fi
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: build, test
         run: |
           mkdir build
@@ -30,4 +32,4 @@ jobs:
           cmake ..
           make
           ctest
-          
+
