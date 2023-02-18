@@ -2,12 +2,11 @@ name: Build Test
 
 on: [push]
 
-  jobs:
-    build:
-      runs-on: macos-latest
-      steps:
-        - name: gfortran on macos
-          run: |
-            # make sure gfortran is available
-            gfortran --version
-            
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: gfortran on macos
+        run: |
+          # make sure gfortran is available
+          gfortran --version
