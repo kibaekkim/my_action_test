@@ -13,5 +13,13 @@ jobs:
       - name: gfortran
         run: |
           # make sure gfortran is available
-          ls /usr/local/bin/gfortran*
-          ls /usr/local/Cellar/gcc*
+          if [ ${{ matrix.os }} == ubuntu-latest ]
+          then
+            ls /usr/local/bin/gfortran*
+            ls /usr/local/Cellar/gcc*
+          fi
+          if [ ${{ matrix.os }} == ubuntu-latest ]
+          then
+            which gfortran
+            which gfortran-12
+          fi
