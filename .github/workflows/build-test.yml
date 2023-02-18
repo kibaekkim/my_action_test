@@ -9,4 +9,6 @@ jobs:
       - name: gfortran on macos
         run: |
           # make sure gfortran is available
-          gfortran --version
+          ls /usr/local/bin/gfortran*
+          ls /usr/local/Cellar/gcc*
+          gfortran-11 --version
