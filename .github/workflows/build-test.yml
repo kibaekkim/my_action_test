@@ -5,12 +5,10 @@ on: [push]
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-
     strategy:
       fail-fast: false
       matrix:
         os: [macos-latest, ubuntu-latest]
-
     steps:
       - name: gfortran
         run: |
