@@ -23,3 +23,11 @@ jobs:
             which gfortran
             which gfortran-12
           fi
+      - name: build, test
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
+          ctest
+          
